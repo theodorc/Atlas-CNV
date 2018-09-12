@@ -1,0 +1,4 @@
+GATKDIR=GATK_DoC/[SAMPLE_FCLBC].DATA.sample_interval_summary
+ATLASCNV=/hgsccl/next-gen/Illumina/working_area/emerge_cnv_repro.4DM/p/ExonQC_background_Stdev/code_for_github.com
+RPATH=/hgsc_software/R/R-3.1.1/bin/R
+RSCRIPT=/hgsc_software/R/R-3.1.1/bin/Rscript
