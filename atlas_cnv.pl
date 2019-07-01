@@ -200,7 +200,7 @@ for my $sample (keys %sample)  {
 	(my $gender, my $midpool) = split /\t/, $sample{$sample};
 # 	my $sample_dir = $sample;   # $sample = 1000015132_HMWCYBCXX-1-IDMB20
 # 	$sample_dir =~ s/.*_/Sample_/;
-	system("mkdir $midpool/CNV") == 0 or print LOG "Failed to create CNV subdir in CNV dir. Maybe already exists?\n";
+	system("if [ ! -e $midpool/CNV ]; then mkdir -p $midpool/CNV; fi") == 0 or print LOG "Failed to create CNV subdir in CNV dir. Maybe already exists?\n";
 	system("cp $midpool/$sample.cnv* $midpool/CNV/") == 0 or print LOG "Failed to copy $midpool/$sample.cnv to $midpool/CNV/.\n";
 	system("cp $midpool/$sample.pdf $midpool/CNV/") == 0 or print LOG "Failed to copy $midpool/$sample.pdf to $midpool/CNV/.\n";
 }
