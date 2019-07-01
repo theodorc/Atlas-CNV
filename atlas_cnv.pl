@@ -148,13 +148,13 @@ for (keys %midpool) { system("mkdir $_") == 0 or die "Failed to create midpool d
 for my $sample (keys %sample)  {
 	(my $gender, my $midpool) = split /\t/, $sample{$sample};
 	(my $id, my $fclbc) = split /_/, $sample;
-	my $this_sample = $config{GATKDIR};           # Sample_[FCLBC]/GATK_DoC/[SAMPLE_FCLBC].DATA.sample_interval_summary
+	my $this_sample = $config{GATKDIR};           # Sample_[FCLBC]/GATK_DoC/[SAMPLE_FCLBC].sample_interval_summary
 	$this_sample =~ s/\[FCLBC\]/$fclbc/;          # HMWCYBCXX-1-IDMB1
 	$this_sample =~ s/\[SAMPLE_FCLBC\]/$sample/;  # 1000015113_HMWCYBCXX-1-IDMB1
 	# (3)
 	system("cp $this_sample $midpool/") == 0 or print LOG "Failed to copy $sample GATK-DoC file to $midpool.\n";
 	# (4)
-	system("$config{RSCRIPT} $config{ATLASCNV}/convert_GATK_DoC.R  $midpool/$sample.DATA.sample_interval_summary  $options{'panel'}  $gender  $midpool") ==0 or print LOG "Failed to convert_GATK_DoC.R on $sample.\n";
+	system("$config{RSCRIPT} $config{ATLASCNV}/convert_GATK_DoC.R  $midpool/$sample.sample_interval_summary  $options{'panel'}  $gender  $midpool") ==0 or print LOG "Failed to convert_GATK_DoC.R on $sample.\n";
 }
 
 # (5)
