@@ -110,7 +110,7 @@ my %config = new Config::General($options{'config'})->getall;
 # (1a). Process sample file.
 # (1b). Process the panel design file.
 # (2).  Create midpool dirs.
-# (3).  Copy GATK *.DATA.sample_interval_summary files to which midpool dirs.
+# (3).  Copy GATK *.sample_interval_summary files to which midpool dirs.
 # (4).  convert_GATK_DoC.R (GATK_DoC --> RPKM).
 # (5).  Create a R rpkm matrix for each midpool.
 # (6).  Call CNVS using atlas_cnv.R on each R rpkm matrix.
@@ -169,7 +169,7 @@ for my $midpool (keys %midpool) {
 		if ($_ =~ /(.*).rpkm.txt$/) {
 			my $sample = $1;
 			open (IN, "$midpool/$sample.rpkm.txt") or die "Can't open rpkm.txt file for sample: $sample.\n";
-			$sample =~ s/.DATA.sample_interval_summary//; print OUT "$sample";
+			$sample =~ s/.sample_interval_summary//; print OUT "$sample";
 			while (<IN>) {
 				chomp;
 				if ($_ =~ /Gene_Exon/) { next; }  # skip header
