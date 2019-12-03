@@ -1,7 +1,10 @@
 # Atlas-CNV
 
 ## Overview
-Atlas-CNV is a method to identify copy number variants (CNVs) using Read Depth coverage at the exon level in the next-generation sequencing (NGS) of Gene Targeted Panels. Target Exons of CNVs are detected within a batch of samples (47) from the same probe capture experiment (midpool). Individually detected exons are C-scored (Z-like scores) which allows for prioritization of high quality CNVs especially for single-exon deletions or duplications. Gene and exon bar plots are also produced for additional evaluation. 
+Atlas-CNV is a method to identify copy number variants (CNVs) using Read Depth coverage at the exon level in the next-generation sequencing (NGS) of Gene Targeted Panels. Target Exons of CNVs are detected within a batch of samples (47) from the same probe capture experiment (midpool). Individually detected exons are C-scored (Z-like scores) which allows for prioritization of high quality CNVs especially for single-exon deletions or duplications. Gene and exon bar plots are also produced for additional evaluation.
+
+Please cite: 
+Chiang, T., Liu, X., Wu, T. et al. Atlas-CNV: a validated approach to call single-exon CNVs in the eMERGESeq gene panel. Genet Med 21, 2135–2144 (2019) doi:10.1038/s41436-019-0475-4
 
 ## Dependencies
 Initial release used 
